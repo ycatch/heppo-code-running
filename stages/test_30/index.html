@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Heppocode Running">
+    <meta name="author" content="Yutaka Kachi">
+
+    <title>Heppocode Running</title>
+
+    <!-- CSS -->
+    <link href="../../lib/bootstrap/4.0.0_b2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="../../lib/highlight/highlight_default.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <span id="top"></span>
+    <nav class="navbar navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#"><strong>はしれ！ヘッポコード</strong></a>
+
+        <div>
+            <a href="#top" type="button" class="btn btn-outline-light">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                ステージ
+            </a>
+            <a href="#edit" type="button" class="btn btn-outline-light">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                エディタ
+            </a>
+        </div>
+    </nav>
+
+    <main role="main">
+        <!-- Start game-stage -->
+
+        <div class="flexbox">
+            <div id="gameContainer"></div>
+        </div>
+
+        <!-- Start Blockly -->
+        <p id="edit"></p>
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-xl">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="blockly_block_tab" data-toggle="tab" href="#blockly_block" role="tab" aria-controls="blockly_block_tab" aria-selected="true">Block</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="blockly_code_tab" data-toggle="tab" href="#blockly_code" role="tab" aria-controls="blockly_code_tab" aria-selected="false">Code</a>
+                        </li>
+                    </ul>
+                    <div id="blocklyArea" class="flexbox">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="blockly_block" role="tabpanel" aria-labelledby="home-tab">
+                                <div id="blocklyDiv" style="width: 1024px; height: 600px;"></div>
+                            </div>
+                            <div class="tab-pane fade" id="blockly_code" role="tabpanel" aria-labelledby="profile-tab">
+                                <pre><code id="codeDiv"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+        <!-- ===================== START FOOTER ===================== -->
+        <div class="clear"></div>
+        <div id="footer" class="clearfix">
+            <div class="grid">
+                <div class="col_12">
+                    Copyright 2018 Yutaka Kachi All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <xml id="toolbox" style="display: none">
+        <category name="Robot" colour="#ED225D">
+            <block type="run_foward"></block>
+            <block type="jump_forward"></block>
+            <block type="is_ball"></block>
+            <block type="is_wall"></block>
+        </category>
+        <sep></sep>
+        <category name="Logic" colour="%{BKY_LOGIC_HUE}">
+            <block type="controls_if"></block>
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_negate"></block>
+            <block type="logic_boolean"></block>
+            <block type="logic_null"></block>
+            <block type="logic_ternary"></block>
+        </category>
+        <category name="Loops" colour="%{BKY_LOOPS_HUE}">
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_whileUntil"></block>
+            <block type="controls_for">
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+                <value name="BY">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_forEach"></block>
+            <block type="controls_flow_statements"></block>
+        </category>
+        <category name="Math" colour="%{BKY_MATH_HUE}">
+            <block type="math_number"></block>
+            <block type="math_arithmetic">
+                <value name="A">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="B">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_single">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">9</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_trig">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">45</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_constant"></block>
+            <block type="math_number_property">
+                <value name="NUMBER_TO_CHECK">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_round">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">3.1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_on_list"></block>
+            <block type="math_modulo">
+                <value name="DIVIDEND">
+                    <shadow type="math_number">
+                        <field name="NUM">64</field>
+                    </shadow>
+                </value>
+                <value name="DIVISOR">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_constrain">
+                <value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">50</field>
+                    </shadow>
+                </value>
+                <value name="LOW">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="HIGH">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_random_int">
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_random_float"></block>
+        </category>
+        <category name="Text" colour="%{BKY_TEXTS_HUE}">
+            <block type="text"></block>
+            <block type="text_length"></block>
+            <block type="text_join"></block>
+            <block type="text_append">
+                <value name="TEXT">
+                    <shadow type="text"></shadow>
+                </value>
+            </block>
+            <block type="text_length">
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_isEmpty">
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_indexOf">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">{textVariable}</field>
+                    </block>
+                </value>
+                <value name="FIND">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_charAt">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">{textVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="text_getSubstring">
+                <value name="STRING">
+                    <block type="variables_get">
+                        <field name="VAR">{textVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="text_changeCase">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_trim">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_print">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_prompt_ext">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="Lists" colour="%{BKY_LISTS_HUE}">
+            <block type="lists_create_with">
+                <mutation items="0"></mutation>
+            </block>
+            <block type="lists_create_with"></block>
+            <block type="lists_repeat">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">5</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_length"></block>
+            <block type="lists_isEmpty"></block>
+            <block type="lists_indexOf">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">{listVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_getIndex">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">{listVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_setIndex">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">{listVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_getSublist">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">{listVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_split">
+                <value name="DELIM">
+                    <shadow type="text">
+                        <field name="TEXT">,</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_sort"></block>
+        </category>
+        <category name="Color" colour="%{BKY_COLOUR_HUE}">
+            <block type="colour_picker"></block>
+            <block type="colour_random"></block>
+            <block type="colour_rgb">
+                <value name="RED">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+                <value name="GREEN">
+                    <shadow type="math_number">
+                        <field name="NUM">50</field>
+                    </shadow>
+                </value>
+                <value name="BLUE">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="colour_blend">
+                <value name="COLOUR1">
+                    <shadow type="colour_picker">
+                        <field name="COLOUR">#ff0000</field>
+                    </shadow>
+                </value>
+                <value name="COLOUR2">
+                    <shadow type="colour_picker">
+                        <field name="COLOUR">#3333ff</field>
+                    </shadow>
+                </value>
+                <value name="RATIO">
+                    <shadow type="math_number">
+                        <field name="NUM">0.5</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <sep></sep>
+        <category name="Variables" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+        <category name="Functions" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+    </xml>
+
+    <xml id="startBlocks" style="display: none">
+        <variables></variables>
+        <block type="controls_if" x="63" y="63">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_operation">
+            <field name="OP">OR</field>
+            <value name="A">
+              <block type="is_ball"></block>
+            </value>
+            <value name="B">
+              <block type="is_wall"></block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="jump_forward"></block>
+        </statement>
+        <statement name="ELSE">
+        <block type="run_foward">
+          <next>
+            <block type="run_foward"></block>
+          </next>
+        </block>
+        </statement>
+        </block>
+    </xml>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../lib/bootstrap/4.0.0_b2/js/jquery.min.js"><\/script>')
+    </script>
+
+    <!-- bootstrap -->
+    <script src="../../lib/bootstrap/4.0.0_b2/js/popper.min.js"></script>
+    <script src="../../lib/bootstrap/4.0.0_b2/js/bootstrap.min.js"></script>
+
+    <!-- game engine -->
+    <script src="../../lib/phaser2.8.8.min.js"></script>
+    <script src="js/Boot.js"></script>
+    <script src="js/Preloader.js"></script>
+    <script src="js/Game.js"></script>
+
+    <!-- blockly -->
+    <script src="../../lib/blockly/blockly_compressed.js"></script>
+    <script src="../../lib/blockly/blocks_compressed.js"></script>
+    <script src="../../lib/blockly/javascript_compressed.js"></script>
+    <script src="../../lib/blockly/msg/js/en.js"></script>
+
+    <!-- Add custom blocks -->
+    <script src="js/heppoBlock.js"></script>
+    <script src="js/heppoBlockCode.js"></script>
+
+    <!-- highlight -->
+    <script src="../../lib/highlight/highlight.pack.js"></script>
+
+    <script src="js/heppocode.js"></script>
+</body>
+
+</html>
