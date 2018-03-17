@@ -1,11 +1,11 @@
-# 走れ！ヘッポコード - 只今工事中 / Heppocode Running
+# Heppocode Running / はしれ！ヘッポコード - 只今工事中
 
 横スクロール型のプログラミングゲーム
 
 
 ## Demo
 
-- [Start game](index.html)
+- [Start game](https://ycatch.github.io/heppo-code-running/)
 
 
 ## Library

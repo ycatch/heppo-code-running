@@ -209,7 +209,7 @@ BasicGame.Game.prototype = {
         this._dialog_goal.visible = false;
         this._dialog_stop.visible = false;
         this.game.paused = false;
-        window.location.href = "../..";
+        window.location.href = "..";
     },
 
     render: function() {
