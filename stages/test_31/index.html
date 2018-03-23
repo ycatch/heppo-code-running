@@ -82,6 +82,7 @@
 
     <xml id="toolbox" style="display: none">
         <category name="ロボット" colour="#ED225D">
+            <block type="start_comment"></block>
             <block type="run_foward"></block>
             <block type="jump_forward"></block>
             <block type="is_ball"></block>
@@ -387,29 +388,34 @@
 
     <xml id="startBlocks" style="display: none">
         <variables></variables>
-        <block type="controls_if" x="63" y="63">
-        <mutation else="1"></mutation>
-        <value name="IF0">
-          <block type="logic_operation">
-            <field name="OP">OR</field>
-            <value name="A">
-              <block type="is_ball"></block>
+        <block type="start_comment" x="63" y="63">
+            <value name="comment_string">
+              <block type="text">
+                <field name="TEXT">このブロックをループする</field>
+              </block>
             </value>
-            <value name="B">
-              <block type="is_wall"></block>
-            </value>
-          </block>
-        </value>
-        <statement name="DO0">
-          <block type="jump_forward"></block>
-        </statement>
-        <statement name="ELSE">
-        <block type="run_foward">
-          <next>
-            <block type="run_foward"></block>
-          </next>
-        </block>
-        </statement>
+            <next>
+                <block type="controls_if">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_operation">
+                    <field name="OP">OR</field>
+                    <value name="A">
+                      <block type="is_ball"></block>
+                    </value>
+                    <value name="B">
+                      <block type="is_wall"></block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="jump_forward"></block>
+                </statement>
+                <statement name="ELSE">
+                <block type="run_foward"></block>
+                </statement>
+                </block>
+            </next>
         </block>
     </xml>
 

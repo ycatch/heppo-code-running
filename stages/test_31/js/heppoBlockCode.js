@@ -14,3 +14,8 @@ Blockly.JavaScript['run_foward'] = function(block) {
   var code = '_self.runFoward(7);\n';
   return code;
 };
+Blockly.JavaScript['start_comment'] = function(block) {
+  var value_comment_string = Blockly.JavaScript.valueToCode(block, 'comment_string', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = '// ' + value_comment_string + '\n';
+  return code;
+};
