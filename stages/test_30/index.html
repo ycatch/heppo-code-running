@@ -82,7 +82,13 @@
 
     <xml id="toolbox" style="display: none">
         <category name="Robot" colour="#ED225D">
-            <block type="start_comment"></block>
+            <block type="comment">
+                <value name="comment_string">
+                    <shadow type="text">
+                        <field name="TEXT">comment this ...</field>
+                    </shadow>
+                </value>
+            </block>
             <block type="run_foward"></block>
             <block type="jump_forward"></block>
             <block type="is_ball"></block>

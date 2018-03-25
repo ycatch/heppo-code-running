@@ -1,4 +1,18 @@
-Blockly.Blocks['is_ball'] = {
+Blockly.Blocks['comment'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("//");
+    this.appendValueInput("comment_string")
+        .setCheck("String")
+        .appendField("*");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};Blockly.Blocks['is_ball'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("ボール？");

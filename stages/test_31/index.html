@@ -82,10 +82,10 @@
 
     <xml id="toolbox" style="display: none">
         <category name="ロボット" colour="#ED225D">
-            <block type="start_comment">
-                <value name="VALUE">
+            <block type="comment">
+                <value name="comment_string">
                     <shadow type="text">
-                        <field name="TEXT">abc</field>
+                        <field name="TEXT">comment this ...</field>
                     </shadow>
                 </value>
             </block>
@@ -222,7 +222,8 @@
         </category>
         <category name="テキスト" colour="%{BKY_TEXTS_HUE}">
             <block type="text"></block>
-            <block type="text_length"></block>
+            <block type="text_length">
+            </block>
             <block type="text_join"></block>
             <block type="text_append">
                 <value name="TEXT">
