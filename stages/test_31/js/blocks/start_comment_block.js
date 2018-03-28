@@ -7,7 +7,7 @@ Blockly.Blocks['start_comment'] = {
         .appendField("スタート");
     this.setInputsInline(true);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour("#808080");
  this.setTooltip("");
  this.setHelpUrl("");
   }

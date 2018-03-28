@@ -8,7 +8,7 @@ Blockly.Blocks['comment'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour("#808080");
  this.setTooltip("");
  this.setHelpUrl("");
   }

@@ -4,7 +4,7 @@ Blockly.Blocks['jump_forward'] = {
         .appendField("前にジャンプ");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(225);
+    this.setColour(0);
  this.setTooltip("");
  this.setHelpUrl("");
   }

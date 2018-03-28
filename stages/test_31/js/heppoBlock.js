@@ -8,11 +8,12 @@ Blockly.Blocks['comment'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour("#808080");
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};Blockly.Blocks['is_ball'] = {
+};
+Blockly.Blocks['is_ball'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("ボール？");
@@ -40,7 +41,7 @@ Blockly.Blocks['jump_forward'] = {
         .appendField("前にジャンプ");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(225);
+    this.setColour(0);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -65,7 +66,7 @@ Blockly.Blocks['start_comment'] = {
         .appendField("スタート");
     this.setInputsInline(true);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour("#808080");
  this.setTooltip("");
  this.setHelpUrl("");
   }
