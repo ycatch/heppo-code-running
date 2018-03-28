@@ -62,7 +62,7 @@ Blockly.Blocks['start_comment'] = {
         .appendField("//");
     this.appendValueInput("comment_string")
         .setCheck("String")
-        .appendField("Start");
+        .appendField("スタート");
     this.setInputsInline(true);
     this.setNextStatement(true, null);
     this.setColour(230);
