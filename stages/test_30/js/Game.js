@@ -214,8 +214,8 @@ BasicGame.Game.prototype = {
 
     render: function() {
         this.game.debug.text('FPS:' + this.game.time.fps , 16, 70, "#00ff00", "16px Courier");
-        this.game.debug.text('State:' + this._state , 16, 85, "#00ff00", "16px Courier");
-        this.game.debug.text('Energy:' + this._energyCount , 16, 100, "#00ff00", "16px Courier");
+        // this.game.debug.text('State:' + this._state , 16, 85, "#00ff00", "16px Courier");
+        // this.game.debug.text('Energy:' + this._energyCount , 16, 100, "#00ff00", "16px Courier");
         // this.game.debug.text('X:' + this._player.body.x, 16, 115, "#00ff00", "16px Courier");
         // this.game.debug.text('Y:' + this._player.body.y, 16, 130, "#00ff00", "16px Courier");
     },
