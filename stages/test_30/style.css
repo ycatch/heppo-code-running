@@ -117,3 +117,13 @@ pre {
     height: 600px;
     background: #fff;
 }
+
+.blocklyTreeLabel {
+    font-family: 'pixelmplus10regular', "Arimo", arial, verdana, sans-serif;
+    font-weight: normal;
+}
+
+.blocklyText {
+    font-family: 'pixelmplus10regular', "Arimo", arial, verdana, sans-serif;
+    font-weight: normal;
+}
