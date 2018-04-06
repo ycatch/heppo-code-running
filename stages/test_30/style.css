@@ -26,6 +26,7 @@ body {
     min-height: 75rem;
     padding-top: 3rem;
     font-family: 'pixelmplus10regular', "Arimo", arial, verdana, sans-serif;
+    font-size: 1.0em;
 }
 
 .flexbox {
@@ -63,6 +64,9 @@ body {
     font-weight: normal;
 }
 
+.btn-lg {
+    font-size: 1.0em;
+}
 
 /*---------------------------------
 	PRE & CODE
@@ -120,7 +124,7 @@ pre {
 
 .blocklyTreeLabel {
     font-family: 'pixelmplus10regular', "Arimo", arial, verdana, sans-serif;
-    font-weight: 900;
+    font-weight: normal;
 }
 
 .blocklyText {

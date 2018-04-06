@@ -54,3 +54,7 @@ body {
     left: 0;
     background: #fff;
 }
+
+.btn-lg {
+    font-size: 1.2em;
+}
