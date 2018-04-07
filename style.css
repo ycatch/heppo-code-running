@@ -55,6 +55,15 @@ body {
     background: #fff;
 }
 
+/*---------------------------------
+	Bootstrap custmize
+-----------------------------------*/
+
+.bg-primary {
+    border-color: #13A097;
+    background-color: #13A097 !important;
+}
+
 .btn-lg {
     font-size: 1.2em;
 }

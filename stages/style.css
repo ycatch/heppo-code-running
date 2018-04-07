@@ -54,3 +54,12 @@ body {
     left: 0;
     background: #fff;
 }
+
+/*---------------------------------
+	Bootstrap custmize
+-----------------------------------*/
+
+.bg-primary {
+    border-color: #13A097;
+    background-color: #13A097 !important;
+}

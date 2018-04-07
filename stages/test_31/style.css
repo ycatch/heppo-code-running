@@ -102,6 +102,14 @@ pre {
     font-size: 0.9em;
 }
 
+/*---------------------------------
+	Bootstrap custmize
+-----------------------------------*/
+
+.bg-primary {
+    border-color: #13A097;
+    background-color: #13A097 !important;
+}
 
 /*---------------------------------
 	Blockly
