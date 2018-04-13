@@ -24,9 +24,9 @@
 
 body {
     min-height: 75rem;
-    padding-top: 3.4rem;
+    padding-top: 8rem;
     font-family: 'pixelmplus10regular', "Arimo", arial, verdana, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.0em;
 }
 
 .flexbox {
@@ -58,6 +58,10 @@ body {
 /*---------------------------------
 	Bootstrap custmize
 -----------------------------------*/
+
+.navbar-brand {
+    font-size: 1.1em;
+}
 
 .bg-primary {
     border-color: #13A097;

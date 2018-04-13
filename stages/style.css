@@ -59,7 +59,15 @@ body {
 	Bootstrap custmize
 -----------------------------------*/
 
+.navbar-brand {
+    font-size: 1.1em;
+}
+
 .bg-primary {
     border-color: #13A097;
     background-color: #13A097 !important;
+}
+
+.btn-lg {
+    font-size: 1.2em;
 }
