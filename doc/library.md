@@ -32,6 +32,16 @@ https://getbootstrap.com/
 https://github.com/twbs/bootstrap
 
 
+## Bootswatch
+
+The MIT License (MIT)
+
+Copyright 2014-2018 Thomas Park
+
+https://bootswatch.com/
+https://github.com/thomaspark/bootswatch 
+
+
 ## highlight.js
 
 Copyright (c) 2006, Ivan Sagalaev

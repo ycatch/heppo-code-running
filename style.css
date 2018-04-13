@@ -71,3 +71,44 @@ body {
 .btn-lg {
     font-size: 1.2em;
 }
+
+.rad_corner {
+    padding: .5em .75em;
+    color: #ffffff;
+    background-color: #126F9E;
+    border: 6px solid #ffffff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 20px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 2px #000000;
+    -webkit-box-shadow: 0px 0px 2px #000000;
+    box-shadow: 0px 0px 2px #000000;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    /*opacity: 0.85;*/
+    /*-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 85);
+    /*-ms-filter must come before filter*/*/
+    /*filter: alpha(opacity = 85);*/
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
+}
+
+.post {
+    /*border: 1px solid #ccc;*/
+    padding: 30px 5% 30px 5%;
+    position: relative;
+    background: #2B3E50;
+
+    margin-bottom: 30px;
+}
+
+	h2.dot {
+	margin-top: -80px;
+	margin-left: -20px;
+	}
+
+	.post p{
+        margin-top: 10px;
+		margin-left: 10px;
+		line-height: 140%
+	}

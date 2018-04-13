@@ -19,9 +19,9 @@
 </head>
 
 <body>
-    <div class="bs-component">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-            <a class="navbar-brand" href="/"><strong>はしれ！ヘッポコード</strong></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html"><strong>はしれ！ヘッポコード</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -39,73 +39,142 @@
                     </li>
                 </ul>
             </div>
-        </nav>
-    </div>
-
-    <div class="jumbotron">
-        <div class="container">
-            <img class="pull-left img-responsive" src="images/heppo_image.png" width="300" height="300" style='padding:0;margin:0 40px 40px 0;'>
-            <div class="text-center">
-                <h1 class="jumbotron-heading"><strong>はしれ！ヘッポコード</strong> -
-                 ただいま工事中</h1>
-                <p class="text-muted"><strong>Heppocode running</strong></p>
-                <p></p>
-                <p>君のコードでロボットが走る。<br> ライバルをけちらして、ゴールを目指せ。
-                </p>
-                <p></p>
-                <p>
-                    <button type="button" class="btn btn-warning btn-lg" onclick="location.href='stages/'"><strong> スタート »</strong></button>
-                </p>
-                <p><a href="https://github.com/ycatch/heppo-code-running">GitHub</a></p>
-                <br class='clearfix'>
-            </div>
         </div>
-    </div>
+    </nav>
 
     <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-md-4">
-                <div class="mx-auto text-center">
-                    <img class="img-responsive" src="images/p1b.png" width="180" height="180" style='padding:0;margin:0 10px 10px 0;'>
-                    <h2><strong>組み立てる</strong></h2>
-                    <p>ブロック型エディタで<br>コードを組み立て</p>
+        <div class="grid">
+            <div class="col_12">
+                <h1>テクノロジ</h1>
+                <p>ここでは、ヘッポコードで利用している、ライブラリやツールについて紹介します。</p>
+
+                <br>
+                <br>
+                <div class="post rad_corner">
+                <h2 class="dot rad_corner">ソフトウェアライブラリ</h2>
+                    <h3 id="phaser.js">phaser.js</h3>
+                    <p>ゲームエンジン</p>
+                    <p>The MIT License (MIT)</p>
+                    <p>Copyright (c) 2017 Richard Davey, Photon Storm Ltd.</p>
+                    <p>
+                        <a href='https://phaser.io/' target='_blank'>https://phaser.io/</a>
+                    </p>
+
+                    <h3 id="blockly">Blockly</h3>
+                    <p>ビジュアル プログラミング エディタ</p>
+                    <p>Copyright 2011 Google Inc.</p>
+                    <p>Apache License Version 2.0, January 2011</p>
+                    <p>
+                        <a href='https://developers.google.com/blockly/' target='_blank'>https://developers.google.com/blockly/</a>,
+                        <a href='https://github.com/google/blockly' target='_blank'>https://github.com/google/blockly</a>
+                    </p>
+
+                    <h3 id="bootstrap">Bootstrap</h3>
+                    <p>HTMLフレームワーク</p>
+                    <p>The MIT License (MIT)</p>
+                    <p>Copyright (c) 2011-2017 Twitter, Inc. Copyright (c) 2011-2017 The Bootstrap Authors</p>
+                    <p>
+                        <a href='https://getbootstrap.com/' target='_blank'>https://getbootstrap.com/</a>,
+                        <a href='https://github.com/twbs/bootstrap' target='_blank'>https://github.com/twbs/bootstrap</a>
+                    </p>
+
+                    <h3 id="bootstrap">Bootswatch</h3>
+                    <p>Bootstrap テーマテンプレート</p>
+                    <p>The MIT License (MIT)</p>
+                    <p>Copyright 2014-2018 Thomas Park</p>
+                    <p>
+                        <a href='https://bootswatch.com/' target='_blank'>https://bootswatch.com/</a>,
+                        <a href='https://github.com/thomaspark/bootswatch' target='_blank'>https://github.com/thomaspark/bootswatch</a>
+                    </p>
+
+                    <h3 id="highlight.js">highlight.js</h3>
+                    <p>コードハイライト ライブラリ</p>
+                    <p>Copyright (c) 2006, Ivan Sagalaev All rights reserved.</p>
+                    <p>BSD 3-clause &quot;New&quot; or &quot;Revised&quot; License</p>
+                    <p>
+                        <a href='https://highlightjs.org/' target='_blank'>https://highlightjs.org/</a>,
+                        <a href='https://github.com/isagalaev/highlight.js' target='_blank'>https://github.com/isagalaev/highlight.js</a>
+                    </p>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="mx-auto text-center">
-                    <img class="img-responsive" src="images/p2b.png" width="180" height="180" style='padding:0;margin:0 10px 10px 0;'>
-                    <h2><strong>走らせる</strong></h2>
-                    <p>横スクロール型コースで<br>ロボットを走らせろ</p>
+
+                <br>
+                <br>
+                <div class="post rad_corner">
+                    <h2 class="dot rad_corner">ツール</h2>
+
+                    <h3 id="Piskel">Piskel</h3>
+                    <p>オンライン ドット絵 エディタ</p>
+                    <p>
+                        <a href='https://www.piskelapp.com/' target='_blank'>https://www.piskelapp.com/</a>
+                    </p>
+
+                    <h3 id="Tiled">Tiled Map Editor</h3>
+                    <p>タイルマップ エディタ</p>
+                    <p>
+                        <a href='http://www.mapeditor.org/' target='_blank'>http://www.mapeditor.org/</a>
+                    </p>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="mx-auto text-center">
-                    <img class="img-responsive" src="images/p3b.png" width="180" height="180" style='padding:0;margin:0 10px 10px 0;'>
-                    <h2><strong>共有する</strong></h2>
-                    <p>コースやライバルが<br>どんどん増えるゾ</p>
+
+                <br>
+                <br>
+                <div class="post rad_corner">
+                    <h2 class="rad_corner dot">マテリアル</h2>
+
+                    <h3 id="pixelmplus">PixelMplus</h3>
+                    <p>ドット フォント</p>
+                    <p>Copyright (C) 2002-2013 M+ FONTS PROJECT</p>
+                    <p>M+ FONT LICENSE</p>
+                    <p>
+                        <a href='http://itouhiro.hatenablog.com/entry/20130602/font' target='_blank'>http://itouhiro.hatenablog.com/entry/20130602/font</a>
+                    </p>
+
+                    <h3 id="PANICPUMPKIN">PANICPUMPKIN</h3>
+                    <p>効果音</p>
+                    <p>Copyright PANICPUMPKIN</p>
+                    <p>
+                        <a href='http://pansound.com/panicpumpkin/' target='_blank'>http://pansound.com/panicpumpkin/</a>
+                    </p>
+
+                    <h3 id="TairaKomori">Taira Komori</h3>
+                    <p>効果音</p>
+                    <p>Copyright Taira Komori</p>
+                    <p>
+                        <a href='http://taira-komori.jpn.org/' target='_blank'>http://taira-komori.jpn.org/</a>
+                    </p>
                 </div>
+
+                <br>
+                <br>
+                <div class="post rad_corner">
+                    <h2 class="rad_corner dot">オープンソース</h2>
+
+                    <p>"オープンソース"とは、誰でも自由にコードを複製・改良・配布できるとする条件で、ソースコードを提供することです。</p>
+                    <p>"はしれ！ヘッポコード"は、このオープンソース(Apache License Version 2.0)で、ソースコードを提供しています。</p>
+                    <p><a href='https://github.com/ycatch/heppo-code-running' target='_blank'>https://github.com/ycatch/heppo-code-running</a></p>
+                </div>
+
             </div>
         </div>
+    </div>
 
-        <!-- ===================== START FOOTER ===================== -->
-        <div class="clear"></div>
-        <div id="footer" class="clearfix">
-            <div class="grid">
-                <div class="col_12">
-                    Copyright 2018 Yutaka Kachi All Rights Reserved.
-                </div>
+    <!-- ===================== START FOOTER ===================== -->
+    <div class="clear"></div>
+    <div id="footer" class="clearfix">
+        <div class="grid">
+            <div class="col_12">
+                Copyright 2018 Yutaka Kachi All Rights Reserved.
             </div>
         </div>
+    </div>
 
-        <!-- Javascript -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-            window.jQuery || document.write('<script src="lib/jquery-3.2.1.js"><\/script>')
-        </script>
-        <!-- bootstrap -->
-        <script src="lib/bootstrap/4.0.0/js/popper.min.js"></script>
-        <script src="lib/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="lib/jquery-3.2.1.js"><\/script>')
+    </script>
+    <!-- bootstrap -->
+    <script src="lib/bootstrap/4.0.0/js/popper.min.js"></script>
+    <script src="lib/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
