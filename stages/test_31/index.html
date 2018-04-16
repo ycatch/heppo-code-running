@@ -12,19 +12,37 @@
 
     <!-- CSS -->
     <link href="../../lib/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../lib/bootstrap/4.0.0/css/bootstrap.lumen.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.0.0/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-0LGTKb8NPx8fBKaojW3qF+Qo2Yhhs/mBrVHMYjPV8V/o4ZAmZ1cpGI2OeQab16T2" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="../../lib/highlight/highlight_default.css" rel="stylesheet">
+    <link href="../../lib/common.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
     <span id="top"></span>
-    <nav class="navbar navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
-            <div>
-                <a class="navbar-brand" href="../.."><strong>はしれ！ヘッポコード</strong></a>
-                <a class="navbar-brand" href="..">テストコース</a>
+            <a class="navbar-brand" href="../.."><strong>はしれ！ヘッポコード</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../..">ホーム &gt;<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="..">ステージ &gt;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="..#test_course">テストコース &gt;</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">日本語ブロック</a>
+                    </li>
+                </ul>
             </div>
             <div>
                 <button type="button" class="btn btn-outline-light btn-lg" onclick="location.href='#'">

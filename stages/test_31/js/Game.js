@@ -294,7 +294,7 @@ BasicGame.Game.prototype = {
 
         /** Start! dialogbox **/
         captionText = "ゴールまで、ロボットを走らせろ";
-        buttonMessage = ['スタート','メニュー'];
+        buttonMessage = ['スタート!','ステージ'];
         this._dialog_start = this.setDialogLayout('テスト10', captionText);
 
         dialogBG = this._dialog_start.getAt(0);
@@ -310,7 +310,7 @@ BasicGame.Game.prototype = {
 
         /** Crash dialogbox **/
         captionText = "　おしい！あとちょっと！";
-        buttonMessage = ['もう一度','メニュー'];
+        buttonMessage = ['もう一度','ステージ'];
         this._dialog_stop = this.setDialogLayout('クラッシュ！', captionText);
 
         dialogBG = this._dialog_stop.getAt(0);
@@ -326,7 +326,7 @@ BasicGame.Game.prototype = {
 
         /** Goal! dialogbox **/
         captionText = "　クリア、おめでとう！";
-        buttonMessage = ['もう一度','メニュー','次に進む'];
+        buttonMessage = ['もう一度','ステージ','次に進む'];
         this._dialog_goal = this.setDialogLayout('ゴール！', captionText);
 
         dialogBG = this._dialog_goal.getAt(0);

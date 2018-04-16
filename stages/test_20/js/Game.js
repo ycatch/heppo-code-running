@@ -248,7 +248,7 @@ BasicGame.Game.prototype = {
 
         /** Start! dialogbox **/
         captionText = "クリックでジャンプ！ゴールをめざせ！";
-        buttonMessage = ['Start','Menu'];
+        buttonMessage = ['Start!','Stage'];
         this._dialog_start = this.setDialogLayout('Stage10', captionText);
 
         dialogBG = this._dialog_start.getAt(0);
@@ -264,7 +264,7 @@ BasicGame.Game.prototype = {
 
         /** Crash dialogbox **/
         captionText = " おしい！あとちょっと！";
-        buttonMessage = ['Retry','Menu'];
+        buttonMessage = ['Retry','Stage'];
         this._dialog_stop = this.setDialogLayout('Crash!', captionText);
 
         dialogBG = this._dialog_stop.getAt(0);
@@ -280,7 +280,7 @@ BasicGame.Game.prototype = {
 
         /** Goal! dialogbox **/
         captionText = " ゴールクリア！おめでとう！";
-        buttonMessage = ['Retry','Menu','Next'];
+        buttonMessage = ['Retry','Stage','Next'];
         this._dialog_goal = this.setDialogLayout('Goal!', captionText);
 
         dialogBG = this._dialog_goal.getAt(0);
@@ -328,7 +328,7 @@ BasicGame.Game.prototype = {
         dialog.add(button);
 
         var buttonText = this.add.text(
-            x + 3, y + 3, message + "!",
+            x + 3, y + 3, message,
             { font: '24px pixelmplus10regular', fill: '#fff'}
         );
         buttonText.anchor.setTo(0.5);
