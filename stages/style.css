@@ -1,0 +1,28 @@
+/*
+    style.css
+*/
+
+/*---------------------------------
+	Page custmize
+-----------------------------------*/
+
+.rad_corner {
+    background: #6E377A;
+}
+
+.post {
+    background: #2B3E50;
+}
+
+.post h3 {
+    color: #FFFFFF;
+}
+
+.post h3 a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.post h3 a:hover {
+    text-decoration: none;
+}

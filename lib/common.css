@@ -60,7 +60,7 @@ body {
 -----------------------------------*/
 
 .navbar-brand {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .bg-primary {
@@ -118,7 +118,10 @@ body {
 		line-height: 140%
 	}
 
-.nav-item:hover {
-    color: white;
+.nav-item a {
     font-weight: bold;
+}
+
+.nav-item a:hover {
+    color: white;
 }
