@@ -153,7 +153,7 @@ BasicGame.Game.prototype = {
             this.execCodeBlock();
             this.collideBot();
             this.setStatus();
-            this._scoreText.text = '走行距離:' + this.camera.x + 'm';
+            this._scoreText.text = '走行距離:' + this.camera.x + 'm, FPS:' + this.time.fps;
         }
     },
 
@@ -213,7 +213,8 @@ BasicGame.Game.prototype = {
     },
 
     render: function() {
-        this.game.debug.text('FPS:' + this.time.fps , 16, 70, "#00ff00", "16px Courier");
+        // this.game.debug.text('FPS:' + this.time.fps + "," + Math.round(60 / this.time.fps) , 16, 70, "#00ff00", "16px Courier");
+        // this.game.debug.text('FPS:' + Math.floor(this.time.fps / 15) , 16, 70, "#00ff00", "16px Courier");
         // this.game.debug.text('State:' + this._state , 16, 85, "#00ff00", "16px Courier");
         // this.game.debug.text('Energy:' + this._energyCount , 16, 100, "#00ff00", "16px Courier");
         // this.game.debug.text('X:' + this._player.body.x, 16, 115, "#00ff00", "16px Courier");

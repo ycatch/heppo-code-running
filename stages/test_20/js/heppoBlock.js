@@ -1,152 +1,73 @@
-Blockly.Blocks['background'] = {
+Blockly.Blocks['comment'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("background");
-    this.appendValueInput("NAME")
-        .setCheck("Number")
-        .appendField("color");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(0);
-    this.setTooltip('');
-    this.setHelpUrl('');
-  }
-};Blockly.Blocks['createcanvas'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("createCanvas");
-    this.appendValueInput("width")
-        .setCheck("Number")
-        .appendField("width");
-    this.appendValueInput("height")
-        .setCheck("Number")
-        .appendField("height");
-    this.appendValueInput("canvas")
+        .appendField("//");
+    this.appendValueInput("comment_string")
         .setCheck("String")
-        .appendField("canvas");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
-  }
-};Blockly.Blocks['draw'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("draw");
-    this.appendStatementInput("do")
-        .setCheck(null)
-        .appendField("do");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
-    this.setTooltip('');
-    this.setHelpUrl('');
-  }
-};Blockly.Blocks['ellipse'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("ellipse");
-    this.appendValueInput("x")
-        .setCheck("Number")
-        .appendField("x");
-    this.appendValueInput("y")
-        .setCheck("Number")
-        .appendField("y");
-    this.appendValueInput("width")
-        .setCheck("Number")
-        .appendField("w");
-    this.appendValueInput("height")
-        .setCheck("Number")
-        .appendField("h");
+        .appendField("*");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(165);
-    this.setTooltip('Draws an ellipse to the screen. ');
-    this.setHelpUrl('https://p5js.org/reference/#/p5/ellipse');
+    this.setColour("#808080");
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
-};Blockly.Blocks['fill'] = {
+};
+Blockly.Blocks['is_ball'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("fill");
-    this.appendValueInput("NAME")
-        .setCheck("Number")
-        .appendField("color");
+        .appendField("ボール？");
     this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(0);
-    this.setTooltip('');
-    this.setHelpUrl('');
-  }
-};Blockly.Blocks['mousex'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("mouseX");
     this.setOutput(true, null);
-    this.setColour(290);
-    this.setTooltip('');
-    this.setHelpUrl('');
+    this.setColour(135);
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };
-Blockly.Blocks['mousey'] = {
+Blockly.Blocks['is_wall'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("mouseY");
-    this.setOutput(true, "Number");
-    this.setColour(290);
-    this.setTooltip('');
-    this.setHelpUrl('');
-  }
-};
-Blockly.Blocks['rect'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("rect");
-    this.appendValueInput("x")
-        .setCheck("Number")
-        .appendField("x");
-    this.appendValueInput("y")
-        .setCheck("Number")
-        .appendField("y");
-    this.appendValueInput("width")
-        .setCheck("Number")
-        .appendField("w");
-    this.appendValueInput("height")
-        .setCheck("Number")
-        .appendField("h");
+        .appendField("カベ？");
     this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(165);
-    this.setTooltip('');
-    this.setHelpUrl('');
+    this.setOutput(true, null);
+    this.setColour(135);
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };
-Blockly.Blocks['run_foward'] = {
+Blockly.Blocks['jump_forward'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Run Foward");
+        .appendField("前にジャンプ");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};Blockly.Blocks['setup'] = {
+};
+Blockly.Blocks['run_foward'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("setup");
-    this.appendStatementInput("do")
-        .setCheck(null)
-        .appendField("do");
-    this.setInputsInline(false);
+        .appendField("前に進む");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
-    this.setTooltip('The setup() function is called once when the program starts.');
-    this.setHelpUrl('https://p5js.org/reference/#/p5/setup');
+    this.setColour(0);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['start_comment'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("//");
+    this.appendValueInput("comment_string")
+        .setCheck("String")
+        .appendField("スタート");
+    this.setInputsInline(true);
+    this.setNextStatement(true, null);
+    this.setColour("#808080");
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };

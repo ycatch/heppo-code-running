@@ -1,7 +1,7 @@
-Blockly.Blocks['run_foward'] = {
+Blockly.Blocks['jump_forward'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("前に進む");
+        .appendField("前にジャンプ");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(0);

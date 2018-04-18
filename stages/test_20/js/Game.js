@@ -186,9 +186,9 @@ BasicGame.Game.prototype = {
     },
 
     render: function() {
-        this.game.debug.text('FPS:' + this.game.time.fps , 16, 70, "#00ff00", "16px Courier");
-        this.game.debug.text('State:' + this._state , 16, 100, "#00ff00", "16px Courier");
-        this.game.debug.text('Energy:' + this._energyCount , 16, 130, "#00ff00", "16px Courier");
+        // this.game.debug.text('FPS:' + this.game.time.fps , 16, 70, "#00ff00", "16px Courier");
+        // this.game.debug.text('State:' + this._state , 16, 100, "#00ff00", "16px Courier");
+        // this.game.debug.text('Energy:' + this._energyCount , 16, 130, "#00ff00", "16px Courier");
         // this.game.debug.text('Cam-x:' + this.camera.x, 16, 85, "#00ff00", "16px Courier");
         // this.game.debug.text('Cam-w:' + this.camera.width, 16, 100, "#00ff00", "16px Courier");
     },
@@ -198,10 +198,10 @@ BasicGame.Game.prototype = {
     */
 
     runFoward: function () {
-        var move_step = 14;
+        var move_step = 4;
         this.camera.x += move_step;
         this._background.x = this.camera.x;
-        this._background.tilePosition.x -= 5;
+        this._background.tilePosition.x -= 2;
 
         this._player.body.x += move_step;
         this._player.animations.play('right');

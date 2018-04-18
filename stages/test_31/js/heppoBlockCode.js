@@ -16,7 +16,7 @@ Blockly.JavaScript['jump_forward'] = function(block) {
   return code;
 };
 Blockly.JavaScript['run_foward'] = function(block) {
-  var code = '_self.runFoward(7);\n';
+  var code = '_self.runFoward(4);\n';
   return code;
 };
 Blockly.JavaScript['start_comment'] = function(block) {
