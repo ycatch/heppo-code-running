@@ -32,7 +32,9 @@ BasicGame.Preloader.prototype = {
         this.load.image('tiles', 'images/stageTileSet.png');
         this.load.image('energyBall', 'images/energyBall.png');
 
-        this.load.audio('jumpSound', ['audio/idou_ochiru_normal.mp3']);
+        this.load.audio('jumpSound', ['audio/GB-Action01-01(Jump).mp3']);
+        this.load.audio('getSound', ['audio/GB-Action01-03(Throw).mp3']);
+        this.load.audio('crashSound', ['audio/GB-Action01-10(Door).mp3']);
 
     },
 

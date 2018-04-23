@@ -75,6 +75,7 @@ BasicGame.Game.prototype = {
 		this._scoreText = this.add.text(5, 16, 'Distance: 0m', { font: '32px  pixelmplus10regular', fill: '#000' });
 
         // enable physics on emitter for crash
+        this._emitter_flag = true;
         this._emitter = this.add.emitter(0, 0, 10);
         this._emitter.makeParticles('dot');
         this._emitter.gravity = 500;
@@ -88,6 +89,7 @@ BasicGame.Game.prototype = {
 
 		this.getSound = this.add.audio('getSound');
 		this.jumpSound = this.add.audio('jumpSound');
+        this.crashSound = this.add.audio('crashSound');
 
         // add dialog-boxies
         this.initDialogs();
@@ -109,11 +111,12 @@ BasicGame.Game.prototype = {
         else if (this._state == "crash") {
             this.collideBot();
 
-            if (this._emitter_flag = true) {
+            if (this._emitter_flag == true) {
                 this._emitter.x = this._player.body.x + 15;
                 this._emitter.y = this._player.body.y;
                 this._player.visible = false;
                 this._emitter_flag = false;
+                this.crashSound.play();
                 this.particleBurst();
             }
 
@@ -168,6 +171,7 @@ BasicGame.Game.prototype = {
     collectBall: function(player, ball) {
         // Removes the ball from the screen
         ball.kill();
+        this.getSound.play();
         this._energyCount += 1;
     },
 
