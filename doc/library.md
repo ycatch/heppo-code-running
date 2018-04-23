@@ -39,7 +39,7 @@ The MIT License (MIT)
 Copyright 2014-2018 Thomas Park
 
 https://bootswatch.com/
-https://github.com/thomaspark/bootswatch 
+https://github.com/thomaspark/bootswatch
 
 
 ## highlight.js
@@ -64,10 +64,8 @@ http://itouhiro.hatenablog.com/entry/20130602/font
 
 ## Sounds
 
-Copyright PANICPUMPKIN
+Copyright 2012-2018 Music is VFR All Rights Reserved.
 
-http://pansound.com/panicpumpkin/
+CC-BY-4.0
 
-Copyright Taira Komori
-
-http://taira-komori.jpn.org/
+http://musicisvfr.com/
