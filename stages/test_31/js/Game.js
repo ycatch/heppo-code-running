@@ -108,6 +108,7 @@ BasicGame.Game.prototype = {
 		this.getSound = this.add.audio('getSound');
 		this.jumpSound = this.add.audio('jumpSound');
         this.crashSound = this.add.audio('crashSound');
+        this.startSound = this.add.audio('startSound');
         this.goalSound = this.add.audio('goalSound');
 
         // add dialog-boxies
@@ -120,7 +121,10 @@ BasicGame.Game.prototype = {
         if (this._state == "start") {
             this.loadCodeBlock();
             this.collideBot();
-            this._dialog_start.visible = true;
+            if (this._dialog_start.visible == false) {
+                this.startSound.play();
+                this._dialog_start.visible = true;
+            }
         }
         else if (this._state == "goal") {
             this.collideBot();

@@ -33,6 +33,7 @@ BasicGame.Preloader.prototype = {
         this.load.audio('jumpSound', ['../../assets/audio/GB-Action01-01(Jump).mp3']);
         this.load.audio('getSound', ['../../assets/audio/GB-Action01-03(Throw).mp3']);
         this.load.audio('crashSound', ['../../assets/audio/GB-Action01-10(Door).mp3']);
+        this.load.audio('startSound', ['../../assets/audio/GB-General02-03(Pitch).mp3']);
         this.load.audio('goalSound', ['../../assets/audio/GB-Action01-06(Miss).mp3']);
 
     },
