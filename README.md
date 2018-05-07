@@ -8,15 +8,15 @@
 - [Start game](https://ycatch.github.io/heppo-code-running/)
 
 
-## Library
-
-下記を参照してください。
-
-- [使用ライブラリ](NOTICE.md)
-
-
 ## License
 
 Copyright 2018 Yutaka Kachi
 
 Apache License Version 2.0
+
+Plase see [LICENSE](LICENSE) and [NOTICE](NOTICE.md).
+
+
+## Library
+
+- [NOTICE](NOTICE.md)
