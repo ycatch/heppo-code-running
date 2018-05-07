@@ -12,7 +12,7 @@
 
 下記を参照してください。
 
-- [使用ライブラリ](doc/library.md)
+- [使用ライブラリ](NOTICE.md)
 
 
 ## License

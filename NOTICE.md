@@ -1,7 +1,16 @@
-# Library of Heppocode Running
+# License - Heoopcode Running
+
+Copyright 2018 Yutaka Kachi
+
+Apache License Version 2.0
+
+Please see LICENSE
 
 
-## phaser.js
+## Library of Heppocode Running
+
+
+### phaser.js
 
 The MIT License (MIT)
 
@@ -10,7 +19,7 @@ Copyright (c) 2017 Richard Davey, Photon Storm Ltd.
 https://phaser.io/
 
 
-## Blockly
+### Blockly
 
 Copyright 2011 Google Inc.
 
@@ -21,7 +30,7 @@ https://developers.google.com/blockly/
 https://github.com/google/blockly
 
 
-## Bootstrap
+### Bootstrap
 
 The MIT License (MIT)
 
@@ -32,7 +41,7 @@ https://getbootstrap.com/
 https://github.com/twbs/bootstrap
 
 
-## Bootswatch
+### Bootswatch
 
 The MIT License (MIT)
 
@@ -42,7 +51,7 @@ https://bootswatch.com/
 https://github.com/thomaspark/bootswatch
 
 
-## highlight.js
+### highlight.js
 
 Copyright (c) 2006, Ivan Sagalaev
 All rights reserved.
@@ -53,7 +62,7 @@ https://highlightjs.org/
 https://github.com/isagalaev/highlight.js
 
 
-## PixelMplus（ピクセル・エムプラス）
+### PixelMplus
 
 Copyright (C) 2002-2013 M+ FONTS PROJECT
 
@@ -62,7 +71,7 @@ M+ FONT LICENSE
 http://itouhiro.hatenablog.com/entry/20130602/font
 
 
-## Sounds
+### Sounds
 
 Copyright 2012-2018 Music is VFR All Rights Reserved.
 
