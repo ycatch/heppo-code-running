@@ -172,6 +172,7 @@ BasicGame.Game.prototype = {
         // main loop
         else {
             this.execCodeBlock();
+            this.execEnemy();
             this.collideBot();
             this.setStatus();
             this._scoreText.text = '走行距離:' + this.camera.x + 'm, FPS:' + this.time.fps;
@@ -298,12 +299,14 @@ BasicGame.Game.prototype = {
 
     execCodeBlock: function () {
         this._exec();
-        this.execEnemy();
     },
 
     execEnemy: function () {
-        this._enemy.body.x += 4;
-        this._enemy.animations.play('right');
+        this.runFoward(this._enemy, 3);
+        this.physics.arcade.collide(this._enemy, this._ground);
+        this.jumpPlayer(this._enemy);
+        // this._enemy.body.x += 4;
+        // this._enemy.animations.play('right');
     },
 
     /**
