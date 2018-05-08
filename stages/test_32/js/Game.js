@@ -302,11 +302,11 @@ BasicGame.Game.prototype = {
     },
 
     execEnemy: function () {
+        if (this.isBall(this._enemy) || this.isWall(this._enemy)) {
+            this.physics.arcade.collide(this._enemy, this._ground);
+            this.jumpPlayer(this._enemy);
+        }
         this.runFoward(this._enemy, 3);
-        this.physics.arcade.collide(this._enemy, this._ground);
-        this.jumpPlayer(this._enemy);
-        // this._enemy.body.x += 4;
-        // this._enemy.animations.play('right');
     },
 
     /**
