@@ -1,4 +1,4 @@
-# Heppocode Running / はしれ！ヘッポコード - 只今工事中
+# Heppocode Running / はしれ！ヘッポコード - ただいま工事中
 
 横スクロール型のプログラミングゲーム
 
