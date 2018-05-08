@@ -4,11 +4,11 @@ Blockly.JavaScript['comment'] = function(block) {
   return code;
 };
 Blockly.JavaScript['is_ball'] = function(block) {
-  var code = '_self.isBall()';
+  var code = '_self.isBall(_self._player)';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 Blockly.JavaScript['is_wall'] = function(block) {
-  var code = '_self.isWall()';
+  var code = '_self.isWall(_self._player)';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 Blockly.JavaScript['jump_forward'] = function(block) {
@@ -16,7 +16,7 @@ Blockly.JavaScript['jump_forward'] = function(block) {
   return code;
 };
 Blockly.JavaScript['run_foward'] = function(block) {
-  var code = '_self.runFoward(4);\n';
+  var code = '_self.runFoward_withBackPlane(4);\n';
   return code;
 };
 Blockly.JavaScript['start_comment'] = function(block) {

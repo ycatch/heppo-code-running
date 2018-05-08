@@ -144,7 +144,9 @@ BasicGame.Game.prototype = {
 
             // Wining Run
             if ((this.camera.x - this._goalDistance) % 320 <= 2) {
-                this.moveBackPlane(this._goalDistance);
+                this.camera.x = this._goalDistance;
+                this._background.x = this._goalDistance;
+                this._scoreText.x = this.camera.x + 16;
 
                 this._dialog_goal.x = this._goalDistance;
                 this._player.body.x = this.camera.x + 500;
@@ -176,7 +178,7 @@ BasicGame.Game.prototype = {
         }
     },
 
-    /** Update method **/
+    /** Change status for Update **/
     startLoop: function () {
         this._dialog_start.visible = false;
 
@@ -200,16 +202,18 @@ BasicGame.Game.prototype = {
     //  Collide the player and the blocks with the platforms
     collideBot: function () {
         this.physics.arcade.TILE_BIAS = 40;
+
         this.physics.arcade.collide(this._player, this._ground);
         this.physics.arcade.overlap(this._player, this._energy, this.collectBall, null, this);
+
         this.physics.arcade.collide(this._enemy, this._ground);
         this.physics.arcade.overlap(this._enemy, this._energy, this.collectBall, null, this);
     },
 
-	jumpPlayer: function(player) {
-		if (this._player.body.touching.down || this._player.body.blocked.down) {
+	jumpPlayer: function(bot) {
+		if (bot.body.touching.down || bot.body.blocked.down) {
 			this.jumpSound.play();
-			this._player.body.velocity.y = -260;
+			bot.body.velocity.y = -260;
 		}
 	},
 
@@ -247,36 +251,40 @@ BasicGame.Game.prototype = {
         Bot's action
     */
 
-    runFoward: function (move_step) {
-        this._player.body.x += move_step;
-        this._player.animations.play('right');
-        this.moveBackPlane(this.camera.x + move_step);
-        this._background.tilePosition.x -= move_step / 2;
+    runFoward_withBackPlane: function (move_step) {
+        this.runFoward(this._player, move_step);
+        this.moveBackPlane(move_step);
+    },
+
+    runFoward: function (bot, move_step) {
+        bot.body.x += move_step;
+        bot.animations.play('right');
     },
 
     jumpFoward: function () {
         this.physics.arcade.collide(this._player, this._ground);
-        this.jumpPlayer(this);
+        this.jumpPlayer(this._player);
     },
 
-    isBall: function () {
+    isBall: function (bot) {
         this._radarBallID = null;
-        this._radarBall.body.x = this._player.body.x + 32;
-        this._radarBall.body.y = this._player.body.y - 32;
+        this._radarBall.body.x = bot.body.x + 32;
+        this._radarBall.body.y = bot.body.y - 32;
         this.physics.arcade.overlap(this._radarBall, this._energy, function() {this._radarBallID = 1;}, null, this);
         return this._radarBallID;
     },
 
-    isWall: function () {
-        var tile_x = Math.round(this._player.body.x / 32) + 2;
-        var tile_y = Math.round(this._player.body.y / 32);
+    isWall: function (bot) {
+        var tile_x = Math.round(bot.body.x / 32) + 2;
+        var tile_y = Math.round(bot.body.y / 32);
         return this._map.getTile(tile_x, tile_y, 0);
     },
 
-    moveBackPlane: function (position) {
-        this.camera.x = position;
-        this._background.x = position;
+    moveBackPlane: function (move_step) {
+        this.camera.x += move_step;
+        this._background.x += move_step;
         this._scoreText.x = this.camera.x + 16;
+        this._background.tilePosition.x -= move_step / 2;
     },
 
     loadCodeBlock: function () {
