@@ -334,7 +334,7 @@ BasicGame.Game.prototype = {
         var captionText;
         var buttonMessage;
 
-        this._testDialog = new infoPanel(this, "TEST");
+        this._testDialog = new infoPanel(this, "TEST", "Hello World");
         this._testDialog.show();
 
         /** Start! dialogbox **/
@@ -397,14 +397,14 @@ BasicGame.Game.prototype = {
 
         var titleText = this.add.text(
             background.x, background.y - background.height * 0.2, title,
-            { font: '40px pixelmplus10regular', fill: '#fff'}
+            { font: '40px pixelmplus10regular', fill: '#fff' }
         );
         titleText.anchor.setTo(0.5);
         dialog.add(titleText);
 
         var tagline = this.add.text(
             background.x, background.y, caption,
-            { font: '24px pixelmplus10regular', fill: '#fff'}
+            { font: '24px pixelmplus10regular', fill: '#fff' }
         );
         tagline.anchor.setTo(0.5);
         dialog.add(tagline);
@@ -431,18 +431,40 @@ BasicGame.Game.prototype = {
 // dialog box for Start, Crash, Goal
 class infoPanel {
 
-    constructor(game) {
+    constructor(game, title, caption) {
         this.name = "Test";
         this.game = game;
 
         this.panelGroup = this.game.add.group();
         this.initBackground();
+        this.initTitleText(title);
+        this.initTagLine(caption);
     }
 
     initBackground() {
         const background = this.game.add.image(this.game.camera.width / 2, 0, 'dialog');
         background.anchor.setTo(0.5);
         this.panelGroup.add(background); // set index = 0
+    }
+
+    initTitleText(title) {
+        const bg = this.panelGroup.getChildAt(0);
+        const titleText = this.game.add.text(
+            bg.x, bg.y + bg.height * 0.1, title,
+            { font: '40px pixelmplus10regular', fill: '#fff'}
+        );
+        titleText.anchor.setTo(0.5);
+        this.panelGroup.add(titleText);
+    }
+
+    initTagLine(caption) {
+        const bg = this.panelGroup.getChildAt(0);
+        const tagline = this.game.add.text(
+            bg.x, bg.y + bg.height * 0.3, caption,
+            { font: '24px pixelmplus10regular', fill: '#fff' }
+        );
+        tagline.anchor.setTo(0.5);
+        this.panelGroup.add(tagline);
     }
 
     show() {
