@@ -131,7 +131,7 @@ BasicGame.Game.prototype = {
             this.collideBot();
             if (this._dialog_start.visible == false) {
                 this.startSound.play();
-                this._dialog_start.visible = true;
+                this._dialog_start.show();
             }
         }
         else if (this._state == "goal") {
@@ -140,7 +140,7 @@ BasicGame.Game.prototype = {
             this._dialog_goal.x = this.camera.x;
             if (this._dialog_goal.visible == false) {
                 this.goalSound.play();
-                this._dialog_goal.visible = true;
+                this._dialog_goal.show();
             }
 
             // Wining Run
@@ -167,9 +167,10 @@ BasicGame.Game.prototype = {
 
             this._dialog_stop.x = this.camera.x;
             this.time.events.add(Phaser.Timer.SECOND * 1,
-                function(){this._dialog_stop.visible = true}, this);
+                function(){this._dialog_stop.show()}, this);
 
         }
+
         // main loop
         else {
             this.execCodeBlock();
@@ -182,8 +183,8 @@ BasicGame.Game.prototype = {
 
     /** Change status for Update **/
     startLoop: function () {
-        this._dialog_start.visible = false;
-        this._testDialog.hide();
+        this._dialog_start.hide();
+        // this._testDialog.hide();
 
         this._player.body.y = this.world.height - 100;
         this._state = "loop";
@@ -228,15 +229,15 @@ BasicGame.Game.prototype = {
     },
 
     quitGame: function () {
-        this._dialog_goal.visible = false;
-        this._dialog_stop.visible = false;
+        this._dialog_goal.hide();
+        this._dialog_stop.hide();
         this.game.paused = false;
         this.state.start('Preloader');
     },
 
     backtoMenu: function () {
-        this._dialog_goal.visible = false;
-        this._dialog_stop.visible = false;
+        this._dialog_goal.hide();
+        this._dialog_stop.hide();
         this.game.paused = false;
         window.location.href = "..";
     },
@@ -328,129 +329,88 @@ BasicGame.Game.prototype = {
     */
 
     initDialogs: function () {
-        var dialogBG;
-        var button_x;
-        var button_y;
-        var captionText;
-        var buttonMessage;
-
-        this._testDialog = new infoPanel(this, "TEST", "Hello World");
-        this._testDialog.show();
+        let panelTitle;
+        let captionText;
+        let buttonMessage;
 
         /** Start! dialogbox **/
+        panelTitle = "テスト33";
         captionText = "ゴールまで、ロボットを走らせろ";
-        buttonMessage = ['スタート!','ステージ'];
-        this._dialog_start = this.setDialogLayout('テスト10', captionText);
-
-        dialogBG = this._dialog_start.getAt(0);
-        button_y = dialogBG.y + dialogBG.height * 0.28;
-
-        // button right
-        button_x = dialogBG.x + 140;
-        this.setButton(this._dialog_start, button_x, button_y, buttonMessage[0], this.startLoop);
-        // button left
-        button_x = dialogBG.x - 140;
-        this.setButton(this._dialog_start, button_x, button_y, buttonMessage[1], this.backtoMenu);
-
+        buttonMessage = ["ステージ", "", "スタート!"];
+        this._dialog_start = new infoPanel(
+            this, panelTitle, captionText, buttonMessage,
+            [this.backtoMenu, , this.startLoop]
+        );
 
         /** Crash dialogbox **/
+        panelTitle = "クラッシュ！";
         captionText = "　おしい！あとちょっと！";
-        buttonMessage = ['もう一度','ステージ'];
-        this._dialog_stop = this.setDialogLayout('クラッシュ！', captionText);
-
-        dialogBG = this._dialog_stop.getAt(0);
-        button_y = dialogBG.y + dialogBG.height * 0.28;
-
-        // button center
-        button_x = dialogBG.x;
-        this.setButton(this._dialog_stop, button_x, button_y, buttonMessage[0], this.quitGame);
-        // button left
-        button_x = dialogBG.x - 140;
-        this.setButton(this._dialog_stop, button_x, button_y, buttonMessage[1], this.backtoMenu);
-
+        buttonMessage = ["ステージ", "", "もう一度!"];
+        this._dialog_stop = new infoPanel(
+            this, panelTitle, captionText, buttonMessage,
+            [this.backtoMenu, , this.quitGame]
+        );
 
         /** Goal! dialogbox **/
+        panelTitle = "ゴール！";
         captionText = "　クリア、おめでとう！";
-        buttonMessage = ['もう一度','ステージ','次に進む'];
-        this._dialog_goal = this.setDialogLayout('ゴール！', captionText);
-
-        dialogBG = this._dialog_goal.getAt(0);
-        button_y = dialogBG.y + dialogBG.height * 0.28;
-
-        // button right
-        button_x = dialogBG.x + 140;
-        this.setButton(this._dialog_goal, button_x, button_y, buttonMessage[2], function(){alert("go to next stage")});
-        // button center
-        button_x = dialogBG.x;
-        this.setButton(this._dialog_goal, button_x, button_y, buttonMessage[0], this.quitGame);
-        // button left
-        button_x = dialogBG.x - 140;
-        this.setButton(this._dialog_goal, button_x, button_y, buttonMessage[1], this.backtoMenu);
-    },
-
-    setDialogLayout: function (title, caption) {
-        var dialog = this.add.group();
-
-        var background = this.add.image(this.camera.width / 2, this.world.centerY, 'dialog');
-        background.anchor.setTo(0.5);
-        dialog.add(background); // set index = 0
-
-        var titleText = this.add.text(
-            background.x, background.y - background.height * 0.2, title,
-            { font: '40px pixelmplus10regular', fill: '#fff' }
+        buttonMessage = ["ステージ", "もう一度!", "次に進む"];
+        this._dialog_goal = new infoPanel(
+            this, panelTitle, captionText, buttonMessage,
+            [this.backtoMenu, this.quitGame, function(){alert("go to next stage")}]
         );
-        titleText.anchor.setTo(0.5);
-        dialog.add(titleText);
-
-        var tagline = this.add.text(
-            background.x, background.y, caption,
-            { font: '24px pixelmplus10regular', fill: '#fff' }
-        );
-        tagline.anchor.setTo(0.5);
-        dialog.add(tagline);
-
-        dialog.visible = false;
-        return dialog;
-    },
-
-    setButton: function (dialog, x, y, message, action) {
-        var button = this.add.button(x, y, 'buttonImage', action, this, 1, 0);
-        button.anchor.setTo(0.5);
-        dialog.add(button);
-
-        var buttonText = this.add.text(
-            x + 3, y + 3, message,
-            { font: '18px pixelmplus10regular', fill: '#fff'}
-        );
-        buttonText.anchor.setTo(0.5);
-        dialog.add(buttonText);
     }
-
 };
 
 // dialog box for Start, Crash, Goal
 class infoPanel {
 
-    constructor(game, title, caption) {
-        this.name = "Test";
+    constructor(game, title, caption,
+        buttonMessages, buttonCallBacks) {
+        this.name = title;
         this.game = game;
 
         this.panelGroup = this.game.add.group();
-        this.initBackground();
+        this.bg = this.initBackground();
         this.initTitleText(title);
         this.initTagLine(caption);
+
+        // Button Left
+        if (buttonMessages[0] != "") {
+            this.initButton(-140, buttonMessages[0], buttonCallBacks[0]);
+        };
+        // Button Center
+        if (buttonMessages[1] != "") {
+            this.initButton(0, buttonMessages[1], buttonCallBacks[1]);
+        };
+        // Button Right
+        if (buttonMessages[2] != "") {
+            this.initButton(140, buttonMessages[2], buttonCallBacks[2]);
+        };
+
+        this.panelGroup.visible = false;
+        this._visible = this.panelGroup.visible;
+    }
+
+    get visible() {
+        return this.panelGroup.visible;
+    }
+
+    set x(x) {
+        this.panelGroup.x = x;
     }
 
     initBackground() {
-        const background = this.game.add.image(this.game.camera.width / 2, 0, 'dialog');
+        const background = this.game.add.image(this.game.camera.width / 2, this.game.world.centerY, 'dialog');
         background.anchor.setTo(0.5);
         this.panelGroup.add(background); // set index = 0
+
+        return background;
     }
 
     initTitleText(title) {
-        const bg = this.panelGroup.getChildAt(0);
         const titleText = this.game.add.text(
-            bg.x, bg.y + bg.height * 0.1, title,
+            this.bg.x, this.bg.y - this.bg.height * 0.2, title,
             { font: '40px pixelmplus10regular', fill: '#fff'}
         );
         titleText.anchor.setTo(0.5);
@@ -458,13 +418,28 @@ class infoPanel {
     }
 
     initTagLine(caption) {
-        const bg = this.panelGroup.getChildAt(0);
         const tagline = this.game.add.text(
-            bg.x, bg.y + bg.height * 0.3, caption,
+            this.bg.x, this.bg.y, caption,
             { font: '24px pixelmplus10regular', fill: '#fff' }
         );
         tagline.anchor.setTo(0.5);
         this.panelGroup.add(tagline);
+    }
+
+    initButton(defX,message, action) {
+        const x = this.bg.x + defX;
+        const y = this.bg.y + this.bg.height * 0.28;
+
+        const button = this.game.add.button(x, y, 'buttonImage', action, this.game, 1, 0);
+        button.anchor.setTo(0.5);
+        this.panelGroup.add(button);
+
+        const buttonText = this.game.add.text(
+            x + 3, y + 3, message,
+            { font: '18px pixelmplus10regular', fill: '#fff'}
+        );
+        buttonText.anchor.setTo(0.5);
+        this.panelGroup.add(buttonText);
     }
 
     show() {
